@@ -1,0 +1,28 @@
+img{
+    width:100px;
+}
+
+.nav-links{
+    color:white;
+}
+
+input{
+    background-color: rgb(27, 27, 27);
+    border:1px solid white;
+    color:white;
+    outline: none;
+    padding:3px 10px;
+    width:300px;
+}
+
+.search-icon{
+    cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: all .8s;
+    max-width:300px;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    max-width: 0;
+  }
