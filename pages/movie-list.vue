@@ -1,63 +1,43 @@
 <template>
-  <div class="app-container">
-    <NavBar @searchNew="searchMovie"/>
-
-<div class="movies-container">
-<Movies :info="info"/>
-</div>
-
-  </div>
+<div>
+ <NavBar/>
+ <div class="movie-container">
+<MovieList :myList="myList"/>
+  </div>        
+ </div>
 </template>
 
 <script>
-import axios from "axios"; 
-import Movies from "@/components/MovieCard.vue"
 import NavBar from "@/components/NavBar.vue"
+import MovieList from "@/components/MovieList.vue"
 
 export default {
-  data(){
-    return{
-  
+name:"movie-list", 
+components:{
+    NavBar, 
+    MovieList
+}, 
+    computed: {
+        myList(){
+      return this.$store.state.myList;
     }
- 
   },
-  components: {
-Movies, 
-NavBar
-  },
-  computed: {
-    info(){
-      return this.$store.state.info;
-    }, 
-
-  },
-   mounted() {
-   
-  },
-  methods: {
-  async searchMovie(result){
-        console.log("hello");
- await this.$store.dispatch("getMovies", result);
-    }
- 
-    
-  }
 }
 </script>
 
-<style >
-
+<style>
 body{
  background-color:rgb(17, 17, 17);
 }
-.movies-container{
+.movie-container{
 margin:50px;
+ color:rgb(248, 248, 248);
 }
 
 .app-container{
  
   height:150vh;
-  color:rgb(248, 248, 248);
+ 
 }
 
 .title {

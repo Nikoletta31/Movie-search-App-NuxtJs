@@ -23,13 +23,13 @@ transition:height 0.2s;
 .movie-list{
   margin:20px 10px;
   transition: transform .2s;
-  border:2px solid transparent;
+  border:1px solid transparent;
   border-radius: 5px;
 }
 .movie-list:hover{
   cursor: pointer;
   transform: scale(1.2);
-  border:2px solid white;
+  border:1px solid white;
   z-index: 9999;
 }
 
@@ -46,6 +46,8 @@ width:230px;
 height:100px;
 background-color: rgb(26, 26, 26);
 padding:10px 20px;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
 }
 
 .movie-list:hover .additional {

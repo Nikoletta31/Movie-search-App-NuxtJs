@@ -1,39 +1,33 @@
 <template>
     <div>
         <ul >
-    <li class="movie-list" v-for="inf in info" :key="inf.index">
+    <li class="movie-list" v-for="list in myList" :key="list.id">
         <div class="movie-card">
-      <img class="poster" :src="inf.Poster">
+      <img class="poster" :src="list.Poster">
       <div class="additional">
           <div class="icons"> 
-              <b-icon icon="plus" class="mr-1 thumb-icon" @click="addMovie(inf)"></b-icon>
              <b-icon icon="hand-thumbs-up" class="mr-1 thumb-icon" ></b-icon>
              <b-icon icon="hand-thumbs-down" class="mr-1 thumb-icon"></b-icon>
           </div>
-          <p class="title-movie">{{inf.Title}}</p>
+          <p class="title-movie">{{list.Title}}</p>
           </div>
         </div>
       </li>
   </ul>
+
     </div>
 </template>
 
 <script>
 export default {
     name:"Movies", 
-    props:["info"], 
+    props:["myList"], 
     data(){
         return{
-    computed: {
- 
-  },
+
         }
     },
-    methods:{
-        addMovie(inf){
- this.$store.dispatch('addToList', inf)
-        }
-    }
+
     
 }
 </script>
