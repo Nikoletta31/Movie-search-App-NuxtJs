@@ -6,10 +6,11 @@
       <img class="poster" :src="inf.Poster">
       <div class="additional">
           <div class="icons"> 
-              <b-icon icon="plus" class="mr-1 thumb-icon" @click="addMovie(inf)"></b-icon>
+              <b-icon :icon="changeIcon()" class="mr-1 thumb-icon" @click="addMovie(inf, iconChange)"></b-icon>
              <b-icon icon="hand-thumbs-up" class="mr-1 thumb-icon" ></b-icon>
              <b-icon icon="hand-thumbs-down" class="mr-1 thumb-icon"></b-icon>
           </div>
+         
           <p class="title-movie">{{inf.Title}}</p>
           </div>
         </div>
@@ -21,17 +22,30 @@
 <script>
 export default {
     name:"Movies", 
-    props:["info"], 
+    props:["info", "myList"], 
     data(){
-        return{
-    computed: {
- 
-  },
-        }
+return{
+    iconPlus: "plus", 
+    iconCheck: "check2", 
+    iconChange: false 
+}
     },
     methods:{
-        addMovie(inf){
- this.$store.dispatch('addToList', inf)
+changeIcon(){
+if(this.iconChange === false){
+    return "plus"
+}
+else {
+    return "check"
+}
+},
+
+    addMovie(inf){
+ this.$store.dispatch('addToList', inf); 
+
+
+
+
         }
     }
     

@@ -10,14 +10,11 @@ ul{
 
 .poster{
 width:230px;
-height:310px;
+height:370px;
 object-fit: cover;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 transition:height 0.2s;
-.poster:hover{
-
-}
 }
 
 .movie-list{
@@ -56,7 +53,7 @@ border-bottom-right-radius: 5px;
 }
 
 .movie-list:hover .poster {
-  height:310px;
+  height:370px;
   
 }
 
@@ -73,4 +70,9 @@ border-bottom-right-radius: 5px;
 }
 .thumb-icon:hover{
   border:1px solid white;
+}
+
+h1{
+  text-align: center;
+  color:rgb(224, 224, 224);
 }

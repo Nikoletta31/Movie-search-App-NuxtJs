@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import { BIconMusicNoteList } from "bootstrap-vue";
 
 export const state = () => ({
     info:[], 
@@ -9,7 +10,7 @@ export const state = () => ({
 
   export const actions = {
     getMovies({ commit }, result) {
-      axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=4403c544&s=${result}`)
+      axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=4403c544&s=' + result)
       .then(response => {
       commit('SET_USERS', response.data.Search)
       })
@@ -26,8 +27,10 @@ export const state = () => ({
       }, 
 
     ADD_LIST(state, inf) {
-        state.myList.push(inf)
-        }  
-     
-      
+      state.myList.push(inf)
+        }     
+  }
+
+  export const getters = {
+
   }

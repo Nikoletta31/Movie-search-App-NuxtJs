@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div v-if="myList.length > 0">
         <ul >
     <li class="movie-list" v-for="list in myList" :key="list.id">
         <div class="movie-card">
@@ -14,7 +15,8 @@
         </div>
       </li>
   </ul>
-
+</div>
+<div v-else><h1>Your list is empty</h1></div>
     </div>
 </template>
 

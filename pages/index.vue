@@ -3,24 +3,19 @@
     <NavBar @searchNew="searchMovie"/>
 
 <div class="movies-container">
-<Movies :info="info"/>
+<Movies :info="info" :myList="myList"/>
 </div>
 
   </div>
 </template>
 
 <script>
-import axios from "axios"; 
-import Movies from "@/components/MovieCard.vue"
-import NavBar from "@/components/NavBar.vue"
 
+import Movies from "@/components/MovieCard.vue";
+import NavBar from "@/components/NavBar.vue";
+import { mapState, mapActions, mapMutations } from 'vuex';
 export default {
-  data(){
-    return{
-  
-    }
- 
-  },
+
   components: {
 Movies, 
 NavBar
@@ -29,14 +24,13 @@ NavBar
     info(){
       return this.$store.state.info;
     }, 
+      myList(){
+      return this.$store.state.myList;
+    }, 
+  },
 
-  },
-   mounted() {
-   
-  },
   methods: {
   async searchMovie(result){
-        console.log("hello");
  await this.$store.dispatch("getMovies", result);
     }
  
