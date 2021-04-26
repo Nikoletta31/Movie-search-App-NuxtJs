@@ -16,6 +16,13 @@ export const state = () => ({
       })
       }, 
 
+      recentMovies({ commit }) {
+        axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=4403c544&s=harry+potter')
+        .then(response => {
+        commit('SET_USERS', response.data.Search)
+        })
+        }, 
+
       addToList({commit}, inf){
         commit('ADD_LIST', inf)
       },

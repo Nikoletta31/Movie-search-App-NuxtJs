@@ -2,7 +2,7 @@
 <div>
    <b-navbar toggleable="lg" type="dark" class="ml-5 mr-5">
     
-    <b-navbar-brand href="#"><img src="@/assets/netflix.png"></b-navbar-brand>
+    <b-navbar-brand href="#"><router-link to="/"><img src="@/assets/netflix.png"></router-link></b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -22,7 +22,7 @@
           <b-icon icon="search" @click="showSearch" class="mr-3 search-icon" variant="white"></b-icon>
           <transition name="fade">
             
-          <input v-if="openSearch" v-model="result" @keydown="search"/>
+        <input v-if="openSearch" v-model="result" @keydown="search"/>
    
           </transition>
         </b-nav-form>
@@ -57,9 +57,10 @@ methods: {
         this.openSearch = true;
     },
     async search(){
-        
         console.log(this.result)
-    this.$emit('searchNew', this.result); 
+    
+ this.$emit('searchNew', this.result); 
+      
 
     }, 
     noLoad(event){

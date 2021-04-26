@@ -30,6 +30,7 @@ return{
     iconChange: false 
 }
     },
+
     methods:{
 changeIcon(){
 if(this.iconChange === false){

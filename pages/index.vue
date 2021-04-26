@@ -13,7 +13,7 @@
 
 import Movies from "@/components/MovieCard.vue";
 import NavBar from "@/components/NavBar.vue";
-import { mapState, mapActions, mapMutations } from 'vuex';
+
 export default {
 
   components: {
@@ -28,6 +28,9 @@ NavBar
       return this.$store.state.myList;
     }, 
   },
+    created(){
+ this.$store.dispatch('recentMovies'); 
+    },
 
   methods: {
   async searchMovie(result){
